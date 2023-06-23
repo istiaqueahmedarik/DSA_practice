@@ -3,7 +3,7 @@ using namespace std;
 class Prims
 {
     vector<pair<int, int>> adj[1000];
-    bool visited[1000];
+    bool visited[1000] = {false};
 
 public:
     void addEdges(int u, int v, int w)
@@ -16,20 +16,22 @@ public:
         int c = 0;
         priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
         pq.push({0, src});
-        visited[src] = true;
+        visited[src] = false;
         while (!pq.empty())
         {
             int u = pq.top().second;
+            int w = pq.top().first;
             pq.pop();
+            if (visited[u])
+                continue;
+            visited[u] = true;
+            c += w;
             for (auto i : adj[u])
             {
                 if (!visited[i.second])
                 {
-                    visited[i.second] = true;
-                    pq.push({i.first, i.second});
+                    pq.push(i);
                 }
-                else
-                    c++;
             }
         }
         return c;
@@ -47,5 +49,5 @@ int main()
         k.addEdges(u, v, w);
     }
     int c = k.countCycle(1);
-    cout << c / 2 << endl;
+    cout << c << endl;
 }
