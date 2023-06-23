@@ -8,12 +8,10 @@
     cout.tie(0);
 
 using namespace std;
-unordered_map<string, string> country;
-unordered_map<string, string> capital;
+unordered_map<string, string> country, capital, parent;
 unordered_map<string, vector<string>> adj;
 unordered_map<string, bool> Done, visited, present;
 unordered_map<string, int> levels;
-unordered_map<string, string> parent;
 void bfs(string s)
 {
     queue<string> q;
