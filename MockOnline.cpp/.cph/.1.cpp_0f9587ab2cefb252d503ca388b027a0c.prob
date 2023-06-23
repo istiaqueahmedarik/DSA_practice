@@ -1,0 +1,1 @@
+{"name":"Local: 1","url":"d:\\coding\\DSA_practice\\MockOnline.cpp\\1.cpp","tests":[{"id":1687526410399,"input":"4 3\n0 3\n2 0\n3 2","output":""},{"id":1687526430257,"input":"5 0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\coding\\DSA_practice\\MockOnline.cpp\\1.cpp","group":"local","local":true}
