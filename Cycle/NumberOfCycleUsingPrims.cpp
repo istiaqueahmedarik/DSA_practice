@@ -25,13 +25,14 @@ public:
             if (visited[u])
                 continue;
             visited[u] = true;
-            c += w;
             for (auto i : adj[u])
             {
                 if (!visited[i.second])
                 {
                     pq.push(i);
                 }
+                else
+                    c++;
             }
         }
         return c;
